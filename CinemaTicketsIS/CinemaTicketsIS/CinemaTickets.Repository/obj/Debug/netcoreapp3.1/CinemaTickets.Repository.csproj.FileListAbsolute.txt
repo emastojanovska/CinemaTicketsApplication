@@ -1,0 +1,15 @@
+C:\Users\Dell\Desktop\CinemaTicketsIS\CinemaTicketsIS\CinemaTickets.Repository\bin\Debug\netcoreapp3.1\CinemaTickets.Repository.deps.json
+C:\Users\Dell\Desktop\CinemaTicketsIS\CinemaTicketsIS\CinemaTickets.Repository\bin\Debug\netcoreapp3.1\CinemaTickets.Repository.dll
+C:\Users\Dell\Desktop\CinemaTicketsIS\CinemaTicketsIS\CinemaTickets.Repository\obj\Debug\netcoreapp3.1\CinemaTickets.Repository.csprojAssemblyReference.cache
+C:\Users\Dell\Desktop\CinemaTicketsIS\CinemaTicketsIS\CinemaTickets.Repository\obj\Debug\netcoreapp3.1\CinemaTickets.Repository.AssemblyInfoInputs.cache
+C:\Users\Dell\Desktop\CinemaTicketsIS\CinemaTicketsIS\CinemaTickets.Repository\obj\Debug\netcoreapp3.1\CinemaTickets.Repository.AssemblyInfo.cs
+C:\Users\Dell\Desktop\CinemaTicketsIS\CinemaTicketsIS\CinemaTickets.Repository\bin\Debug\netcoreapp3.1\CinemaTickets.Repository.pdb
+C:\Users\Dell\Desktop\CinemaTicketsIS\CinemaTicketsIS\CinemaTickets.Repository\bin\Debug\netcoreapp3.1\CinemaTickets.Domain.dll
+C:\Users\Dell\Desktop\CinemaTicketsIS\CinemaTicketsIS\CinemaTickets.Repository\bin\Debug\netcoreapp3.1\CinemaTickets.Domain.pdb
+C:\Users\Dell\Desktop\CinemaTicketsIS\CinemaTicketsIS\CinemaTickets.Repository\obj\Debug\netcoreapp3.1\CinemaTickets.Repository.csproj.CopyComplete
+C:\Users\Dell\Desktop\CinemaTicketsIS\CinemaTicketsIS\CinemaTickets.Repository\obj\Debug\netcoreapp3.1\CinemaTickets.Repository.dll
+C:\Users\Dell\Desktop\CinemaTicketsIS\CinemaTicketsIS\CinemaTickets.Repository\obj\Debug\netcoreapp3.1\CinemaTickets.Repository.pdb
+C:\Users\Dell\Desktop\CinemaTicketsIS\CinemaTicketsIS\CinemaTickets.Repository\bin\Debug\netcoreapp3.1\CinemaTickets.Repository.runtimeconfig.json
+C:\Users\Dell\Desktop\CinemaTicketsIS\CinemaTicketsIS\CinemaTickets.Repository\bin\Debug\netcoreapp3.1\CinemaTickets.Repository.runtimeconfig.dev.json
+C:\Users\Dell\Desktop\CinemaTicketsIS\CinemaTicketsIS\CinemaTickets.Repository\obj\Debug\netcoreapp3.1\CinemaTickets.Repository.csproj.CoreCompileInputs.cache
+C:\Users\Dell\Desktop\CinemaTicketsIS\CinemaTicketsIS\CinemaTickets.Repository\obj\Debug\netcoreapp3.1\CinemaTickets.Repository.genruntimeconfig.cache

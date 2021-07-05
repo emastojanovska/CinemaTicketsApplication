@@ -1,0 +1,9 @@
+C:\Users\Dell\Desktop\CinemaTicketsIS\CinemaTicketsIS\CinemaTickets.Domain\bin\Debug\netcoreapp3.1\CinemaTickets.Domain.deps.json
+C:\Users\Dell\Desktop\CinemaTicketsIS\CinemaTicketsIS\CinemaTickets.Domain\bin\Debug\netcoreapp3.1\CinemaTickets.Domain.dll
+C:\Users\Dell\Desktop\CinemaTicketsIS\CinemaTicketsIS\CinemaTickets.Domain\obj\Debug\netcoreapp3.1\CinemaTickets.Domain.csprojAssemblyReference.cache
+C:\Users\Dell\Desktop\CinemaTicketsIS\CinemaTicketsIS\CinemaTickets.Domain\obj\Debug\netcoreapp3.1\CinemaTickets.Domain.AssemblyInfoInputs.cache
+C:\Users\Dell\Desktop\CinemaTicketsIS\CinemaTicketsIS\CinemaTickets.Domain\obj\Debug\netcoreapp3.1\CinemaTickets.Domain.AssemblyInfo.cs
+C:\Users\Dell\Desktop\CinemaTicketsIS\CinemaTicketsIS\CinemaTickets.Domain\bin\Debug\netcoreapp3.1\CinemaTickets.Domain.pdb
+C:\Users\Dell\Desktop\CinemaTicketsIS\CinemaTicketsIS\CinemaTickets.Domain\obj\Debug\netcoreapp3.1\CinemaTickets.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Dell\Desktop\CinemaTicketsIS\CinemaTicketsIS\CinemaTickets.Domain\obj\Debug\netcoreapp3.1\CinemaTickets.Domain.dll
+C:\Users\Dell\Desktop\CinemaTicketsIS\CinemaTicketsIS\CinemaTickets.Domain\obj\Debug\netcoreapp3.1\CinemaTickets.Domain.pdb

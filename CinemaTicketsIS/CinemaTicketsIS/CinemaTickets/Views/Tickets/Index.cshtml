@@ -1,0 +1,163 @@
+﻿@model IEnumerable<CinemaTickets.Domain.DomainModels.Ticket>
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<CinemaTickets.Domain.Identity.CinemaApplicationUser> SignInManager
+@inject UserManager<CinemaTickets.Domain.Identity.CinemaApplicationUser> UserManager
+@inject CinemaTickets.Repository.ApplicationDbContext Context
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+<style>
+    #ticketTable tbody tr {
+        color: white;
+        background-color: black;
+    }
+
+    #ticketTables_info {
+        color: white;
+    }
+
+    #ticketTable_length label select {
+        background-color: white;
+    }
+
+    #ticketTable_filter label {
+        color: white
+    }
+
+        #ticketTable_filter label input {
+            background-color: white
+        }
+
+    #ticketTable_length label {
+        color: white
+    }
+
+    #ticketTable_previous, #ticketTable_next {
+        color: white
+    }
+
+    #ticketTable_length label select.active {
+        color: white
+    }
+</style>
+
+
+
+<div class="container">
+
+
+    <h2><span class="badge badge-danger text-uppercase"><b>repertoire</b></span></h2>
+    <h4><span class="badge badge-dark"><b style="color:red">The prices are higher for the weekend</b></span></h4>
+    <div>
+        <table id="ticketTable">
+            <thead class="bg-dark">
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Movie</th>
+                    <th scope="col">Date and Time</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Available</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody style="background-color: black">
+                @foreach (var item in Model)
+                {
+                    @if (item.DateTime >= DateTime.Now)
+                    {
+                <tr>
+                    <th scope="row">
+                        @foreach (var movie in Context.Movies)
+                        {
+                            @if (movie.Id == item.MovieId)
+                            {
+                                <img src=@movie.ImageUrl alt=@movie.MovieName style="width:100px; height:100px;" />
+                            }
+                        }
+
+                    </th>
+                    <th>
+                        @foreach (var movie in Context.Movies)
+                        {
+                            @if (movie.Id == item.MovieId)
+                            {
+                                @movie.MovieName
+                            }
+                        }
+
+                    </th>
+                    <th>@item.DateTime</th>
+                    <td> @item.Price $</td>
+                    <td>
+                        @if (@item.Available <= 0)
+                        {
+                            <b style="color:red" class="text-uppercase">sold out</b>
+                        }
+                        else
+                        {
+                            @item.Available
+                        }
+
+                    </td>
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        @foreach (var u in Context.Users)
+                        {
+                            @if (UserManager.GetUserId(User) == u.Id && u.Role == CinemaTickets.Domain.DomainModels.Enumerations.Role.ADMIN)
+                            {
+                                <th><a class="btn btn-dark" asp-action="Edit" asp-route-id="@item.Id">Edit</a></th>
+                                <th><a class="btn btn-dark" asp-action="Delete" asp-route-id="@item.Id">Delete</a></th>
+                            }
+
+
+                        }
+                        @if (@item.Available <= 0)
+                        {
+                            <td><a class="btn btn-danger disabled" asp-controller="Tickets" asp-action="AddTicketToCart" asp-route-id="@item.Id">ADD TO CART</a></td>
+                        }
+                        else
+                        {
+                            <td><a class="btn btn-danger" asp-controller="Tickets" asp-action="AddTicketToCart" asp-route-id="@item.Id">ADD TO CART</a></td>
+                        }
+
+                    }
+
+                </tr>
+                    }
+
+                }
+
+
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
+@section Scripts{
+    <link href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+
+            $("#ticketTable").DataTable();
+        })
+
+    </script>
+}
+

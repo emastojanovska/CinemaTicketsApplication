@@ -1,0 +1,45 @@
+﻿@model CinemaTickets.Domain.DTO.AddToShoppingCartDto
+@inject CinemaTickets.Repository.ApplicationDbContext Context
+
+@{
+    ViewData["Title"] = "Add To Shopping Card";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="container">
+        <h2><span class="badge badge-dark">Add Selected Ticket to User Shopping Cart</span></h2>
+
+        <hr />
+
+
+        <div class="row">
+            <div class="col-md-4 m-auto">
+                <form asp-action="AddTicketToCart" method="post">
+                    <input type="hidden" asp-for="TicketId" />
+
+                    <div class="form-group">
+                        <label>
+                           Movie Name
+                        </label>
+                        <input type="text" disabled placeholder="@Context.Movies.Find(Model.SelectedTicket.MovieId).MovieName" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="SelectedTicket.DateTime"></label>
+                        <input disabled asp-for="SelectedTicket.DateTime" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Quantity"></label>
+                        <input id="inputName" asp-for="Quantity" class="form-control" />
+                        @*  <span asp-validation-for="Quantity" class="text-danger"></span>*@
+
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-danger" data-toggle="alert" data-target="#myAlert" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+

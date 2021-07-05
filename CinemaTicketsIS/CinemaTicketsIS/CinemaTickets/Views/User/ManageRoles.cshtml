@@ -1,0 +1,91 @@
+﻿@model IEnumerable<CinemaTickets.Domain.Identity.CinemaApplicationUser>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+    <div class="container">
+        <div class="row">
+            <div class="m-3">
+                <button type="button" class="btn btn-dark btn-block" data-toggle="modal" data-target="#ImportModal">
+                    Import Users
+                </button>
+            </div>
+        </div>
+        <div class="row" style="color: white">
+           
+
+
+            <!-- Modal -->
+            <div class="modal  " id="ImportModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog " role="document">
+            <div class="modal-content" style="color:black">
+                <div class="modal-header"><h5 class="modal-title">Import users from Excel</h5></div>
+                <div class="modal-body">
+                    <p >
+                        The columns in the rows of the excel file has to be in this format: <br />
+                        EMAIL | PASSWORD | CONFIRM PASSWORD | ROLE
+                    </p>
+                    <form asp-controller="User" asp-action="ImportUsers" method="post" enctype="multipart/form-data">
+
+                        <div class="form-group w-100">
+                            <input type="file" name="file" class="form-control" />
+                        </div>
+
+                        <hr />
+
+                        <button type="submit" class="btn btn-dark">Save</button>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+            <div class="col mx-0 my-0">
+                <table class="table" style="color:white">
+                    <thead class="bg-dark">
+                        <tr>
+                            <th scope="col">User Email</th>
+                            <th scope="col">Role</th>
+                            <th scope="col"></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody style="background-color: black">
+                        @foreach (var user in Model)
+                        {
+                            <tr>
+                                <td>@user.Email</td>
+                                <td>@user.Role</td>
+                                <td>
+                                    @if (user.Role == CinemaTickets.Domain.DomainModels.Enumerations.Role.ADMIN)
+                                    {
+                                        <a class="btn btn-dark"
+                                           asp-controller="User"
+                                           asp-action="ChangeRole"
+                                           asp-route-userId=@user.Id>
+                                            Assign as standard user
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a class="btn btn-dark"
+                                           asp-controller="User"
+                                           asp-action="ChangeRole"
+                                           asp-route-userId=@user.Id>
+                                            Assign as administrator
+                                        </a>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+   
